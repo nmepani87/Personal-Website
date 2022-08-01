@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 /***** VIDEO STYLING *****/
 /* Formatting for background video */
 body {
@@ -5,6 +9,17 @@ body {
     background-color: black;
     color: whitesmoke;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    opacity: 1;
+    transition: 4s opacity;
+    font-size: 1vw;
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+
+}
+
+body.fade-out{
+    opacity: 0.1;
 }
 
 h1, .Header1 {
@@ -16,7 +31,7 @@ h1, .Header1 {
 p {
     font-family: 'Times New Roman', Times, serif;
     text-align: justify;
-    font-size: 20px;
+    font-size: 1.4vw;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -36,7 +51,7 @@ q {
 
 img .column-pics {
     max-width: 100%;
-    height: 340px;
+    height: 24.44vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -55,10 +70,11 @@ img .column-pics {
     position: fixed;
     top: 0;
     z-index: 2;
-    animation: moveNav 4s;
     -webkit-animation: moveNav 4s;
+    animation: moveNav 4s;
     text-align: center;
-    margin-left: 30vw;
+    margin-left: 30.3vw;
+    vertical-align: middle;
 }
 
 @keyframes moveNav {
@@ -73,7 +89,7 @@ img .column-pics {
     padding: 12px 12px;
     text-decoration: none;
     font-family: 'Didot', sans-serif;
-    font-size: 22px;
+    font-size: 1.6vw;
     text-align: center;
     position: relative;
     text-transform: uppercase;
@@ -95,9 +111,10 @@ img .column-pics {
 
 #Coding_Video {
     position: fixed;
-    right: 0;  
-    min-width: 100vw;
+    left: 0; 
+    min-width: 100%;
     z-index: -1;
+    overflow:auto;
 }
 
 @media screen and (max-width: 576px) {
@@ -112,8 +129,8 @@ img .column-pics {
     width: 100%;
     padding: 20px;
     position: relative;
-    animation: moveVideoText 4s;
     -webkit-animation: moveVideoText 4s;
+    animation: moveVideoText 4s;
 }
 
 @keyframes moveVideoText {
@@ -123,6 +140,81 @@ img .column-pics {
 
 * {
     box-sizing: border-box;
+}
+
+#Slideshowbkgrd{
+    background-color: rgba(255, 255, 255, 0.484);
+}
+
+.mySlides{
+    display: none;
+}
+
+#Slideshowcontainer{
+    width: 40vw;
+    height: auto;
+    padding-top: 1.5%;
+    position: relative;
+    margin: auto;
+}
+
+img.SlideshowImages {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.Previous, .Next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1.5vw;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: 0.5s ease;
+    color: rgb(255, 255, 255);
+    z-index: 20;
+}
+
+.Previous:hover, .Next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Previous {
+    left:0;
+}
+
+.Next {
+    right: 0;
+}
+
+.slidetext {
+    color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3vw;
+    background-color: rgba(218, 218, 218, 0.7);
+    padding: 1%;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1s;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .2;}
+    to {opacity: 1;}
+}
+
+@keyframes fade {
+    from {opacity: .2;}
+    to {opacity: 1;}
 }
 
 .Column1 {
@@ -194,7 +286,7 @@ img .column-pics {
 .image-text {
     background-color: rgba(255, 255, 255, 0.6);
     position: absolute;
-    top: 125%;
+    top: 179%;
     left: 25%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -227,6 +319,80 @@ img .column-pics {
     clear: both;
 }
 
+form {
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.OpenFormButton {
+    position: fixed;
+    bottom: 3.75vw;
+    right: 1.5vw;
+    width: 19vw;
+    height: 4.5vw;
+    font-size: 1.5vw;
+    font-weight: 400;
+    text-transform: uppercase;
+    background-color: rgb(54, 54, 54);
+    color: rgb(241, 255, 242);
+    cursor: pointer;
+    -webkit-animation: formPop 4s;
+    animation: formPop 4s;
+}
+
+@keyframes formPop {
+    from {right: -30vw;}
+    to {right: 1.5vw;}
+}
+
+@-webkit-keyframes formPop {
+    from {right: -30vw;}
+    to {right: 1.5vw;}
+}
+
+.OpenFormButton:hover {
+    color: #41474a;
+    background-color: #b9c1b9;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    border-color: whitesmoke;
+}
+
+.formOpened {
+    z-index: 10;
+    display: none;
+    position: fixed;
+    bottom: 3.5vw;
+    right: 1.25vw;
+}
+
+.form-container {
+    max-width: 30vw;
+    padding: 0.8vw;
+    background-color: #b9c1b9;
+    color: black;
+}
+
+.formbutton {
+    min-height: 2.2vw;
+    min-width: 6vw;
+    color: #b9c1b9;
+    background-color: #333537;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    border-color: whitesmoke;
+    margin-left: 6vw;
+    font: 1.1vw;
+}
+
+.formbutton:hover {
+    color: #000000;
+    background-color: #ffffff;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    border-color: whitesmoke;
+}
+
 input[type=text] {
     width: 100%;
     padding: 12px;
@@ -242,37 +408,14 @@ input[type=text]:hover {
     box-shadow: -4px 4px 2px rgba(165, 165, 165, 0.844);
 }
 
-input[type=submit] {
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 5px;
-    border-radius: 5px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-input[type=submit]:hover {
-    background-color: black;
-    color: whitesmoke;
-    transform: scale(1.15);
-    transition: .3s;
-}
-
-form {
-    border-radius: 3px;
-    padding: 10px;
-}
-
-
 footer {
     position: fixed;
     background-color: black;
-    height: 40px;
+    height: 3.46vw;
     bottom: 0;
     overflow: hidden;
-    animation: moveFooter 4s;
     -webkit-animation: moveFooter 4s;
+    animation: moveFooter 4s;
     z-index: 1;
     width: 100%;
 }
@@ -285,8 +428,7 @@ footer {
 .footer-center {
     text-align: center;
     font-weight: bold;
-    font-size: 16px;
-    padding: 0px 0px 40px 0px;
+    font-size: 1.5vw;
     margin-top: -12px;
 }
 
@@ -294,4 +436,8 @@ footer {
     min-width: 24px;
     min-height: 24px;
     padding-left: 2%;
+}
+
+.Contact{
+    cursor: pointer;
 }

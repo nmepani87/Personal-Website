@@ -17,7 +17,7 @@
             <a href="#Home">Home</a>
             <a href="#About">About</a>
             <a href="#Github">Past Projects</a>
-            <a href="#Contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="Contact">Contact</a>
         </div>
 
         <!-- Video behind text-->
@@ -38,15 +38,39 @@
                 <br>
                 <br> Welcome to my portfolio website. My name is Nilesh. On here I will let you know of my background and experience.
                 <br>
-                <br> Thank you for taking the time to view my page, I hope you enjoy the experience!
+                <br> Thank you for taking the time to view my page and I hope you enjoy the experience!
             </p>
         </div>
+
+        
+        <!-- Start of Slideshow -->
+        <div id="Slideshow">
+            <div id="Slideshowbkgrd">
+                <div id="Slideshowcontainer">
+                    <div class="mySlides fade">
+                        <img class="SlideshowImages" src="./Media/Images/Coding_Laptop_Evening.jpg" alt="Laptop Coding">
+                        <div class="slidetext">I would love to help you on your project</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <img class="SlideshowImages" src="./Media/Logos/html-css-js-logos.jpg" alt="HTML/CSS/JS Logos">
+                        <div class="slidetext">I am currently studying to be a full-stack software developer,<br> and so far trained in:<br>HTML, CSS and JavaScript.</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <img class="SlideshowImages" src="./Media/Images/Wind_Up_Telephone.jpg" alt="Wind Up Telephone">
+                        <div><a class="slidetext Contact" onclick="openForm()">Contact me through here!</a></div>
+                    </div>
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+            </div>
+        </div>
+        <!-- End of Slideshow -->
 
         <!-- About -->
         <div class="Row" id="About">
             <!-- About left Column -->
             <div class="Column2">
-                <img class="column-pics" src="./Media/Images/Code_On_Face.jpg" alt="Code projected onto person">
+                <img class="column-pics" src="./Media/Images/Laptop_Desk.jpg" alt="Laptop on Desk">
             </div>
             <!-- About right Column -->
             <div class="Column1">
@@ -61,6 +85,7 @@
             </div>
         </div>
         <!-- End of top 2 columns -->
+
 
         <!-- Github/Projects -->
         <div class="Row" id="Github">
@@ -82,25 +107,24 @@
             </div>
         </div>
         <!-- End of Github -->
-
+        <br><br><br>
         <!-- Contact form -->
-        <div class="Row" id="Contact">
-            <!-- Contact image, left column -->
-            <div class="Column2 Column_Tall">
-                <img class="column-pics" src="./Media/Images/Laptop_Desk.jpg" alt="Laptop on Desk">
-            </div>
-            <!-- Contact form, right column-->
-            <div class="Column1 Column_Tall2">
-                <h1>Contact</h1>
-                <!-- Form -->
-                <form action="https://formspree.io/f/moqrorwl" method="post">
+        <div id="Contact">
+            <button onclick="openForm()" class="OpenFormButton">Contact</button>
+            <div class="formOpened" id="myForm">
+                <form action="https://formspree.io/f/moqrorwl" method="post" class="form-container">
+                    <h1>Contact Form</h1>
                     <label>Name:</label>
                         <input type="text" placeholder="Please enter your name here">
+                    <label>Contact Number:</label>
+                        <input type="text" placeholder="Please enter your contact number here">
                     <label>Email:</label>
                         <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
                     <label>Message:</label>
                         <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="Submit">
+                    
+                    <button type="submit" class="formbutton">SUBMIT</button>
+                    <button type="button" class="formbutton cancel" onclick="closeForm()">CANCEL</button>
                 </form>
             </div>
         </div>
@@ -109,7 +133,7 @@
         <!-- Footer -->
         <footer>
             <p>
-                <p class="footer-center">&copy;&nbsp; Nilesh Mepani
+                <p class="footer-center">&copy;&nbsp; <span class="footername">Nilesh Mepani</span>
                     <a href="https://www.linkedin.com/in/nilesh-mepani-b0656b1b5/" target="_blank" rel="noopener noreferrer">
                     <img class="icon_link" src="./Media/Logos/LinkedIn-Logos/LI-In-Bug.png" alt="LinkedIn Logo"></a> 
                     <a href="https://www.instagram.com/nilmepani/" target="_blank" rel="noopener noreferrer">
@@ -118,5 +142,6 @@
                 <br>
             </p>
         </footer>
+        <script src="./JS/portfolio.js"></script>
     </body>
 </html>
