@@ -13,8 +13,8 @@ body {
     transition: 4s opacity;
     font-size: 1vw;
     overflow-x: hidden;
-    user-select: none;
     -webkit-user-select: none;
+    user-select: none;
 
 }
 
@@ -55,7 +55,6 @@ img .column-pics {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    overflow: ;
 }
 
 @media screen and (max-width: 576px) {
@@ -440,6 +439,11 @@ footer {
 }
 
 .Contact{
-    cursor: pointer;
-    
+    cursor: pointer;   
+}
+
+input:hover {
+    background-color: black;
+    color: white;
+    box-shadow: #ffffff 3px 3px 3px;
 }
